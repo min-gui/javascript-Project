@@ -3,8 +3,32 @@ import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 
-const Movie = () => {
-  return <h1>I like potato</h1>;
+const Food = ({name, picture}) => {
+  return (
+    <div>
+      <h2>I like {name}</h2>
+      <img src={picture} />
+    </div>
+  )
+}
+
+const foodILike = [
+{
+  name: "kimchi",
+  image: "https://www.maangchi.com/wp-content/uploads/2019/11/vegankimchi-insta.jpg"
+},
+{
+  name: "samgyeopsal",
+  image: "https://www.maangchi.com/wp-content/uploads/2019/11/vegankimchi-insta.jpg"
+},
+{
+  name: "samgyeopsal",
+  image: "https://www.maangchi.com/wp-content/uploads/2019/11/vegankimchi-insta.jpg"
+}
+];
+
+function renderFood(dish) {
+  return <Food name={dish.name} picture={dish.image} />
 }
 
 function App() {
@@ -12,11 +36,7 @@ function App() {
  
   return (  
     <div>
-      <h1>hello</h1>
-      <Movie />
-      <Movie />
-      <Movie />
-      <Movie />ß
+      {foodILike.map(renderFood)}
     </div>
   );
   
