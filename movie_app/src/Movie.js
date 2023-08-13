@@ -1,8 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Movie(){
-    return <h1></h1>;
+function Movie({id, year, title, summary, poster}) {
+    return(
+    <div className="movie_data">
+        <h3 className ="movie_title">{title}</h3>
+        <h5 className ="movie_year">{year}</h5>
+        <p className ="movie_summary">{summary}</p>
+    </div>
+    );
 }
 
 Movie.prototype = {
